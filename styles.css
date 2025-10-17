@@ -1,0 +1,98 @@
+:root {
+    --primary-color: #3498db;
+    /* Основной */
+    --secondary-color: #2ecc71;
+    /* Вторичный */
+    --accent-color: #e74c3c;
+    /* Акцент */
+    --font-size-base: 16px;
+    --spacing-unit: 1rem;
+    --border-radius: 8px;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --color-main: #2c3e50;
+    /* Добавлено из примера */
+    --color-light: #ecf0f1;
+    --color-dark: #34495e;
+}
+
+body {
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+    background-color: var(--color-light);
+}
+
+/* BEM блоки и модификаторы */
+.nav--main {
+    background-color: var(--primary-color);
+}
+
+.nav__link--active {
+    font-weight: bold;
+    color: var(--secondary-color) !important;
+}
+
+.nav__link--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.project-card {
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.project-card--featured {
+    border-left: 4px solid var(--accent-color);
+}
+
+.form--valid input:valid {
+    border-color: var(--secondary-color);
+}
+
+.form--invalid input:invalid {
+    border-color: var(--accent-color);
+}
+
+/* Состояния через data-атрибуты */
+[data-state="active"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+[data-state="inactive"] {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+/* Темная тема */
+body.dark-theme {
+    --primary-color: #1a1a1a;
+    --secondary-color: #27ae60;
+    --accent-color: #c0392b;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 14px;
+        --spacing-unit: 0.5rem;
+    }
+}
+
+/* Overrides для Bootstrap */
+.card {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    transition: var(--transition);
+}

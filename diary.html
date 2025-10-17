@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <h1 class="h3 mb-1">Персональный сайт</h1>
+                <p class="mb-0 opacity-75">Студент-разработчик</p>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav--main">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i
+                                    class="bi bi-house me-1"></i>Главная</a></li>
+                        <li class="nav-item"><a class="nav-link nav__link--active" href="diary.html"><i
+                                    class="bi bi-journal me-1"></i>Дневник</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html"><i
+                                    class="bi bi-folder me-1"></i>Проекты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacts.html"><i
+                                    class="bi bi-telephone me-1"></i>Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container my-5">
+            <h2 class="text-center mb-4">Мой учебный прогресс</h2>
+            <div class="list-group mb-5">
+                <div class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Запуск нового проекта</h5>
+                        <small class="text-muted">25.09.2025</small>
+                    </div>
+                    <p class="mb-1">Мы рады сообщить о запуске нового веб-проекта...</p>
+                    <span class="badge bg-success">Завершено</span>
+                </div>
+                <div class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Обновление дизайна</h5>
+                        <small class="text-muted">20.09.2025</small>
+                    </div>
+                    <p class="mb-1">Проведено полное обновление дизайна...</p>
+                    <span class="badge bg-success">Завершено</span>
+                </div>
+                <div class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Новые возможности</h5>
+                        <small class="text-muted">15.09.2025</small>
+                    </div>
+                    <p class="mb-1">Добавлены новые функциональные возможности...</p>
+                    <span class="badge bg-warning">В процессе</span>
+                </div>
+            </div>
+
+            <h2 class="text-center mb-4">Текущие курсы</h2>
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Фронтенд и бэкенд разработка</span><span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>JavaScript</span><span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>React</span><span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEntryModal">Добавить
+                    запись</button>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-white py-4 text-center">
+            <p>&copy; 2025 Семестровая работа. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <!-- Modal для добавления записи -->
+    <div class="modal fade" id="addEntryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Добавить запись</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form--valid">
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Дата</label>
+                            <input type="date" class="form-control" id="date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Название</label>
+                            <input type="text" class="form-control" id="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Описание</label>
+                            <textarea class="form-control" id="description" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Добавить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Запись добавлена!');
+            bootstrap.Modal.getInstance(document.getElementById('addEntryModal')).hide();
+        });
+    </script>
+</body>
+
+</html>

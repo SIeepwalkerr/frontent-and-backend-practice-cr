@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        dialog {
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 0;
+            box-shadow: var(--shadow);
+            max-width: 500px;
+        }
+
+        .modal-header {
+            background: var(--color-main);
+            color: white;
+            padding: var(--spacing-unit);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--color-light);
+            border-radius: var(--border-radius);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: var(--spacing-unit);
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <h1 class="h3 mb-1">Персональный сайт</h1>
+                <p class="mb-0 opacity-75">Студент-разработчик</p>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav--main">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i
+                                    class="bi bi-house me-1"></i>Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="diary.html"><i
+                                    class="bi bi-journal me-1"></i>Дневник</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html"><i
+                                    class="bi bi-folder me-1"></i>Проекты</a></li>
+                        <li class="nav-item"><a class="nav-link nav__link--active" href="contacts.html"><i
+                                    class="bi bi-telephone me-1"></i>Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container my-5">
+            <h2 class="text-center mb-4">Свяжитесь со мной</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="contact-info mb-4">
+                        <p><strong>Email:</strong> example@university.ru</p>
+                        <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
+                        <p><strong>Адрес:</strong> г. Москва, ул. Пушкина, д. Колотушкина</p>
+                        <p><strong>Группа:</strong> ЭФБО-17-24</p>
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="contactModal.showModal()">Обратная связь</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-white py-4 text-center">
+            <p>&copy; 2025 Семестровая работа. Все права защищены.</p>
+        </footer>
+
+        <dialog id="contactModal">
+            <div class="modal-header">
+                <h2>Форма обратной связи</h2>
+            </div>
+            <div class="modal-content p-4">
+                <form id="feedbackForm" class="form--valid" method="dialog">
+                    <div class="form-group">
+                        <label for="name">Имя <span class="text-danger">*</span></label>
+                        <input type="text" id="name" required placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон <span class="text-danger">*</span></label>
+                        <input type="tel" id="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="text-danger">*</span></label>
+                        <input type="email" id="email" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Категория <span class="text-danger">*</span></label>
+                        <select id="category" required>
+                            <option value="">Выберите</option>
+                            <option value="question">Вопрос</option>
+                            <option value="suggestion">Предложение</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение <span class="text-danger">*</span></label>
+                        <textarea id="message" rows="5" required placeholder="Ваше сообщение"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-secondary">Отмена</button>
+                        <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            alert('Сообщение отправлено!');
+            contactModal.close();
+            form.reset();
+        }
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) contactModal.close();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,70 +1,178 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Семестровая работа - Главная</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="page-container">
-        <div class="header">
-            <h1>Персональный сайт</h1>
-        </div>
-        
-        <div class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Котики</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
-            </ul>
-        </div>
-        
-        <div class="content">
-            <div class="profile-header">
-                <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/photo.jpg" alt="Фото автора">
-                <h2 class="profile-name"></h2>
-                <p class="profile-group">ЭФБО-17-24</p>
-            </div>
-
-            <div class="about-me">
-                <h3>Обо мне</h3>
-                <p>Я родился в Москве в 70-м на краю города. Глупость рано ударила в голову. В четыре активно ругался. Потом школа, форма, драки, клей. Так я становился сильней. Воровал деньги в раздевалке.</p>
-            </div>
-
-            <div class="skills-container">
-                <h3>Мои навыки</h3>
-                <div class="skill-tag">HTML/CSS</div>
-                <div class="skill-tag">JavaScript</div>
-                <div class="skill-tag">React</div>
-                <div class="skill-tag">Node.js</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">Базы данных</div>
-            </div>
-
-            <div class="experience-section">
-                <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Frontend разработчик</h3>
-                    <p class="experience-desc">Разработка пользовательских интерфейсов с использованием современных технологий.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Backend разработчик</h3>
-                    <p class="experience-desc">Создание серверной логики и API для веб-приложений.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Fullstack разработчик</h3>
-                    <p class="experience-desc">Полный цикл разработки веб-приложений от идеи до реализации.</p>
+    <div class="container-fluid p-0">
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Персональный сайт</h1>
+                        <p class="mb-0 opacity-75">Студент-разработчик</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-17-24</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="footer">
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav--main">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link nav__link--active" href="index.html"><i
+                                    class="bi bi-house me-1"></i>Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="diary.html"><i class="bi bi-journal me-1"></i>Дневник</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html"><i class="bi bi-folder me-1"></i>Проекты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container my-5">
+            <section class="mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-center">
+                                <img src="images/photo.jpg" alt="Фото автора" class="rounded-circle mb-3"
+                                    style="width: 150px; height: 150px;">
+                                <h2>Елисеев Юрий Сергеевич</h2>
+                                <p>Группа: ЭФБО-17-24</p>
+                                <a href="assets/resume.pdf" class="btn btn-primary">Скачать резюме</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="text-center mb-4">Обо мне</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <p>Я родился в Москве в 70-м на краю города. Глупость рано ударила в голову. В четыре активно
+                            ругался. Потом школа, форма, драки, клей. Так я становился сильней. Воровал деньги в
+                            раздевалке.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="text-center mb-4">Мои навыки</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>HTML/CSS</span><span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>JavaScript</span><span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>React</span><span>70%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Node.js</span><span>60%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Python</span><span>75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Базы данных</span><span>65%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="text-center mb-4">Мой опыт работы</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card project-card project-card--featured shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Frontend разработчик</h5>
+                                <p class="card-text">Разработка пользовательских интерфейсов с использованием
+                                    современных технологий.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card project-card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Backend разработчик</h5>
+                                <p class="card-text">Создание серверной логики и API для веб-приложений.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card project-card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Fullstack разработчик</h5>
+                                <p class="card-text">Полный цикл разработки веб-приложений от идеи до реализации.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-dark text-white py-4 text-center">
             <p>&copy; 2025 Семестровая работа. Все права защищены.</p>
-        </div>
+        </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
